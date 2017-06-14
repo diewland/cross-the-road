@@ -10,15 +10,15 @@
   <body>
     <a-scene fog="type: exponential; color: navy; density: 0.06;">
 
-      <!-- Player -->
+      <!-- player -->
       <a-entity id='player'
                 camera="userHeight: 1.6"
                 universal-controls
                 kinematic-body
                 jump-ability
-                position="0 0 0"></a-entity>
+                position="0 2 0"></a-entity>
 
-      <!-- Environment -->
+      <!-- environment -->
       <a-sky color="#FFF"></a-sky>
       <a-ocean width="50" depth="50" density="40"></a-ocean>
       <a-grid position='0 -5 0' static-body></a-grid>
@@ -30,54 +30,11 @@
              position="0 1 0"
              static-body></a-box>
 
-      <!-- wood plate -->
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -4.5"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 1"
-             static-body></a-box>
-
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -7"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 2"
-             static-body></a-box>
-
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -9.5"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 3"
-             static-body></a-box>
-
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -12"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 4"
-             static-body></a-box>
-
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -14.5"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 5"
-             static-body></a-box>
-
-      <a-box color="#804000"
-             width="4" height="0.25" depth="1"
-             position="0 1 -17"
-             velocity="0 0 0"
-             toggle-velocity="axis: x; min: -10; max: 10; speed: 6"
-             static-body></a-box>
-
       <!-- goal plate -->
       <a-box id="goal"
              color="#39BB82"
              width="10" height="0.25" depth="4"
-             position="0 1 -20"
+             position="0 1 -12"
              static-body></a-box>
 
       <!-- Lighting -->
@@ -86,19 +43,8 @@
       <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
     </a-scene>
 
-    <script>
-      function restart(){
-      }
-      document.onkeydown = function (e) {
-        e = e || window.event;
-        switch (e.which || e.keyCode) {
-          case 13 :
-            // when press Enter, move back to start plate
-            document.querySelector('#player').setAttribute('position', '0 1.6 0');
-            break;
-        }
-      }
-    </script>
+    <!-- game script -->
+    <script src='js/game.js'></script>
 
   </body>
 </html>
