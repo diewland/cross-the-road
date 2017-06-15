@@ -91,6 +91,12 @@
         overlay.style.display = '';
         overlayLink.addEventListener('click', function () { overlay.remove(); });
       });
+      // detect
+      document.querySelector('a-scene').addEventListener('gamepadbuttondown', function (e) {
+        if(e.detail.index == 9){ // start button
+          e.target.setAttribute('position', '0 2 0');
+        }
+      });
     </script>
 
     <!-- game script -->
